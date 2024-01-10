@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_search/screen_tabs/album/simple/ui/album_ui.dart';
 import 'package:music_search/screen_tabs/artist/simple/ui/artist_ui.dart';
 import 'package:music_search/screen_tabs/track/simple/ui/track_ui.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 import 'package:music_search/search/search_architecture.dart';
 import 'package:provider/provider.dart';
 
@@ -84,7 +84,7 @@ class _SearchBarState extends State<SearchBar> {
               elevation: 4,
               color: Colors.white,
               child: Placeholder(
-                fallbackHeight: 200,
+                fallbackHeight: 100,
               ),
             ),
           );
