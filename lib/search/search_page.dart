@@ -84,7 +84,7 @@ class _SearchBarState extends State<SearchBar> {
               elevation: 4,
               color: Colors.white,
               child: Placeholder(
-                fallbackHeight: 100,
+                fallbackHeight: 0,
               ),
             ),
           );
