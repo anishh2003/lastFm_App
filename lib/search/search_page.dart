@@ -20,20 +20,31 @@ class _SearchPageState extends State<SearchPage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          bottom: const TabBar(
-            tabs: [
-              Tab(text: 'ALBUM'),
-              Tab(text: 'ARTIST'),
-              Tab(text: 'SONG'),
-            ],
-          ),
+          toolbarHeight: 130,
           title: const SearchBar(),
         ),
-        body: const TabBarView(
+        body: const Column(
           children: [
-            AlbumUI(),
-            ArtistUI(),
-            TrackUI(),
+            Flexible(
+              flex: 1,
+              child: TabBar(
+                tabs: [
+                  Tab(text: 'ALBUM'),
+                  Tab(text: 'ARTIST'),
+                  Tab(text: 'SONG'),
+                ],
+              ),
+            ),
+            Flexible(
+              flex: 10,
+              child: TabBarView(
+                children: [
+                  AlbumUI(),
+                  ArtistUI(),
+                  TrackUI(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -65,10 +76,11 @@ class _SearchBarState extends State<SearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100.0,
       width: 350.0,
       child: FloatingSearchBar(
+        backdropColor: Colors.white,
         controller: controller,
         hint: 'Enter an artist , track or album',
         physics: const BouncingScrollPhysics(),
